@@ -9,7 +9,7 @@ function App() {
       <Router>
         <h1>testing</h1>
         <hr />
-        <a href="https://api.instagram.com/oauth/authorize?client_id=968783993938106&redirect_uri=https://shauandsss.github.io/pinit/map&scope=user_profile,user_media,instagram_graph_user_profile&response_type=code">
+        <a href="https://api.instagram.com/oauth/authorize?client_id=968783993938106&redirect_uri=https://shauandsss.github.io/pinit&scope=user_profile,user_media,instagram_graph_user_profile&response_type=code">
           Authorize on Instagram
         </a>
 
