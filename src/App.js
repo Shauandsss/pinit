@@ -13,13 +13,11 @@ function App() {
           Authorize on Instagram
         </a>
 
-        <Route exact path="/map">
-          <div>Access</div>
-          {console.log(new URLSearchParams(window.location.search).get("id"))}
-          {new URLSearchParams(window.location.search).get("id")}
-          {console.log(new URLSearchParams(window.location.search).get("code"))}
-          {new URLSearchParams(window.location.search).get("code")}
-        </Route>
+        <div>Access</div>
+        {console.log(new URLSearchParams(window.location.search).get("id"))}
+        {new URLSearchParams(window.location.search).get("id")}
+        {console.log(new URLSearchParams(window.location.search).get("code"))}
+        {new URLSearchParams(window.location.search).get("code")}
       </Router>
     </div>
   );
