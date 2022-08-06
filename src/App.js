@@ -9,11 +9,10 @@ function App() {
 
   //const fetchUserInfo = () => {};
   useEffect(() => {
-    if (!shortLiveToken)
+    if (!shortLiveToken) {
       setShortLiveToken(
         new URLSearchParams(window.location.search).get("code")
       );
-    if (shortLiveToken && !longLiveToken) {
       var details = {
         client_id: 968783993938106,
         redirect_uri: "https://localhost:3000/",
@@ -45,11 +44,12 @@ function App() {
         .then((response) => response.json())
         .then((data) => setLongLiveToken(data))
         .then((data) => console.log(data));
+
+      console.log("Short:");
+      console.log(shortLiveToken);
+      console.log("Long:");
+      console.log(longLiveToken);
     }
-    console.log("Short:");
-    console.log(shortLiveToken);
-    console.log("Long:");
-    console.log(longLiveToken);
   }, []);
 
   console.log(shortLiveToken);
