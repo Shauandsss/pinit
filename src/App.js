@@ -15,7 +15,7 @@ function App() {
       );
       var details = {
         client_id: 968783993938106,
-        redirect_uri: "https://localhost:3000/",
+        redirect_uri: "https://shauandsss.github.io/pinit",
         client_secret: "b7e641ff23d76dc270775d3a635944d7",
         grant_type: "authorization_code",
         code: new URLSearchParams(window.location.search).get("code"),
