@@ -18,7 +18,7 @@ function App() {
         redirect_uri: "https://localhost:3000/",
         client_secret: "b7e641ff23d76dc270775d3a635944d7",
         grant_type: "authorization_code",
-        code: shortLiveToken,
+        code: new URLSearchParams(window.location.search).get("code"),
       };
 
       var formBody = [];
