@@ -43,7 +43,8 @@ function App() {
       fetch("https://api.instagram.com/oauth/access_token", requestOptions)
         .then((response) => response.json())
         .then((data) => setLongLiveToken(data))
-        .then((data) => console.log(data));
+        .then((data) => console.log(data))
+        .then((data) => fetchUserInfo());
 
       console.log("Short:");
       console.log(shortLiveToken);
@@ -52,8 +53,27 @@ function App() {
     }
   }, []);
 
-  console.log(shortLiveToken);
-  console.log(longLiveToken);
+  function fetchUserInfo() {
+    console.log("FETCH USER INFO");
+
+    if (longLiveToken) {
+      console.log("FETCH USER INFO abaixo");
+      const requestOptions = {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET",
+          "access-control-request-headers": "access-control-allow-origin",
+        },
+      };
+      fetch(
+        `https://api.instagram.com/oauth/access_token?fields={id,caption,username}&access_token=${longLiveToken}`,
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+  }
 
   return (
     <div className="App">
