@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  const [shortLiveToken, setShortLiveToken] = useState("");
-  const [longLiveToken, setLongLiveToken] = useState("");
+  const [shortLiveToken, setShortLiveToken] = useState(null);
+  const [longLiveToken, setLongLiveToken] = useState(null);
 
   //const fetchUserInfo = () => {};
   useEffect(() => {
@@ -13,10 +13,6 @@ function App() {
       setShortLiveToken(
         new URLSearchParams(window.location.search).get("code")
       );
-    console.log("Short:");
-    console.log(shortLiveToken);
-    console.log("Long:");
-    console.log(longLiveToken);
     if (shortLiveToken && !longLiveToken) {
       var details = {
         client_id: 968783993938106,
@@ -50,6 +46,10 @@ function App() {
         .then((data) => setLongLiveToken(data))
         .then((data) => console.log(data));
     }
+    console.log("Short:");
+    console.log(shortLiveToken);
+    console.log("Long:");
+    console.log(longLiveToken);
   }, []);
 
   console.log(shortLiveToken);
